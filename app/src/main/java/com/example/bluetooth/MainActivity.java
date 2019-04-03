@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void checkOn() {
         //判断蓝牙是否打开
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        mBluetoothAdapter =BluetoothAdapter.getDefaultAdapter();
         if (!mBluetoothAdapter.isEnabled()) {
             while (true) {
                 AlertDialog.Builder mDialog = new AlertDialog.Builder(this);
@@ -107,11 +107,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void askConnect() {
-        //询问是否已连接设备
+        //询问想连接的设备已在配对设备列表里
         AlertDialog.Builder mDialog = new AlertDialog.Builder(this);
         mDialog.setTitle("Have you connected the device?")
                 .setMessage("\"Yes\" to go on.\n\"No\" to close and try again later.")
-                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("yes",   new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         selectDevice();
